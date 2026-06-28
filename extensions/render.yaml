@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: announcement-app
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run setup && npx react-router-serve ./build/server/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
