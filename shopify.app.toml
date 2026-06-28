@@ -2,7 +2,7 @@
 
 client_id = "66c7d78625ee76099965bc22ff288f2a"
 name = "announcement-app"
-application_url = "https://example.com"
+application_url = "https://announcement-app-jy6l.onrender.com"
 embedded = true
 
 [access_scopes]
@@ -45,7 +45,7 @@ api_version = "2026-07"
   topics = [ "app/scopes_update" ]
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [ "https://announcement-app-jy6l.onrender.com/auth/callback" ]
 
 [build]
 include_config_on_deploy = true
