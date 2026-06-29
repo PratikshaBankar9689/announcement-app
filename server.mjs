@@ -11,7 +11,7 @@ const handler = await createRequestListener({
   build: () => import("./build/server/index.js"),
 });
 
-app.all("*", handler);
+app.use(handler);
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`✅ Server running on 0.0.0.0:${PORT}`);
