@@ -1,14 +1,17 @@
 import express from "express";
-import { createRequestHandler } from "@react-router/node";
+import { createRequestListener } from "@react-router/node";
+
+const PORT = process.env.PORT || 10000;
 
 const app = express();
-const PORT = process.env.PORT || 10000;
 
 app.use(express.static("build/client"));
 
-app.all("*", createRequestHandler({
+const handler = await createRequestListener({
   build: () => import("./build/server/index.js"),
-}));
+});
+
+app.all("*", handler);
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`✅ Server running on 0.0.0.0:${PORT}`);
