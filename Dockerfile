@@ -3,7 +3,6 @@ RUN apk add --no-cache openssl
 WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=10000
-ENV HOST=0.0.0.0
 COPY package.json package-lock.json* ./
 RUN npm ci --omit=dev && npm cache clean --force
 COPY . .
